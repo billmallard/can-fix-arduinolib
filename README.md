@@ -50,14 +50,6 @@ For detailed installation guidance see: http://arduino.cc/en/Guide/Libraries
 - Any Arduino board with a CAN controller, or an Arduino paired with a CAN transceiver module (MCP2515-based shields are common in the MakerPlane ecosystem)
 - CAN bus wiring per the CAN-FIX physical layer spec (120Ω termination at each end)
 
-## Role in the MakerPlane / MAOS Ecosystem
-
-This library is the **embedded hardware entry point** for the avionics network. Arduino nodes built with this library can:
-
-- Feed sensor data (pressure altitude, OAT, EGT, RPM, voltage, etc.) into [FIX-Gateway](../fix-gateway)
-- Receive control outputs from [FIX-Gateway](../fix-gateway) to drive physical annunciators, relays, or trim motors
-- Bridge custom MAOS subsystem sensors to the avionics display stack without custom protocol work
-
 ## Important Disclaimer
 
 > **This library is experimental and is not suited for primary or backup flight/engine instrumentation or navigation. Use at your own risk.**  
