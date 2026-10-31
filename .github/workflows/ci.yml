@@ -1,0 +1,25 @@
+name: ci
+
+# Build canfix.cpp against the mock can.h/EEPROM.h in tests/mocks and run the
+# GoogleTest suite (tests/test_canfix.cpp). Host-only: no Arduino toolchain.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S tests -B build
+      - name: Build
+        run: cmake --build build -j
+      - name: Test
+        run: ctest --test-dir build --output-on-failure --no-tests=error
