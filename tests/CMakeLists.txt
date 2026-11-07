@@ -43,5 +43,6 @@ target_link_libraries(canfix_tests
 )
 
 # ── CTest integration ─────────────────────────────────────────────────────────
+enable_testing()
 include(GoogleTest)
 gtest_discover_tests(canfix_tests)
